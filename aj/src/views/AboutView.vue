@@ -1,11 +1,11 @@
 <template>
   <div>
-<h1>hi</h1>
+<h1></h1>
   </div>
 </template>
 
 <script setup>
-import { ref, onBeforeMounted} from 'vue'
+/* import { ref, onBeforeMounted} from 'vue'
 const edu = ref('')
 async function  getEdu (){
   let rest = await fetch ("https://data.cityofnewyork.us/resource/43nn-pn8j.json")
@@ -14,5 +14,5 @@ async function  getEdu (){
 }
 onBeforeMounted(() => {
  getEdu();
-})
+}) */
 </script>
