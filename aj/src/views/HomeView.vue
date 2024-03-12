@@ -14,11 +14,13 @@ createApp(App).mount('#app')
 </script>
  -->
 
+ 
  <template>
   <div class=" title"> THINGS </div>
   <DestCard v-for="poke in pokemon"
   :key = "poke.name">
   </DestCard>
+  <TheWelcome  :poke = "poke"/>
 </template>
 
 <script setup>
@@ -32,9 +34,12 @@ async function getPokemon () {
 onBeforeMounted(() => {
   getPokemon();
 })
-import DestCard from "@/components/DestCard.vue;"
+import DestCard from "@/components/DestCard.vue";
+import TheWelcome from "@/components/TheWelcome.vue";
 </script>
 
 <style scoped>
 
 </style> 
+ 
+
