@@ -2,6 +2,7 @@
   <main>
     <h1>BAR CHART</h1>
   </main>
+
 </template> 
 <script setup>
 
