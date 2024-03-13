@@ -1,9 +1,8 @@
-<!--  <template>
-  <div class="card">
-    <h2>{{ poke.incident_type }}</h2>
-    <img :src="poke.location" alt=""/>
-    <h3>{{ poke.borough }}</h3>
 
+
+<template>
+  <div class = "all">
+ <h2>{{ poke.incident_type }}</h2>
   </div>
 </template>
 
@@ -11,52 +10,40 @@
 import { defineProps } from 'vue';
 const props = defineProps({
  poke: Object,
+ 
 });
 </script>
 <style scoped>
 
-</style>  -->
-<template>
-  <div>
-
-  </div>
-</template>
-
-<script>
-import {Bar} from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-  
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-
-export default {
-  name: 'BarChart',
-  components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: [ 'January', 'February', 'March'],
-        datasets: [
-          {
-            label: 'Data One',
-            backgroundColor: '#f87979',
-            data: [40, 20, 12]
-          }
-        ]
-      },
-      chartOptions: {
-        responsive: true
-      },
-      methods: { 
-        async fetchData(){ 
-          let rest = await fetch ("https://data.cityofnewyork.us/resource/pasr-j7fb.json")
-          let data = await rest.json();
-  pokemon.value = data;}
-      }
-    }
-  }
+.card {
+  height: 50%;
+    width: 25%;
+    background-color:#b0a592; ;
+    align-items: center;
+    border-radius: 5%;
+    box-shadow: 10px 5px 5px rgb(70, 72, 73);
+    margin: 15px 1px;
 }
-</script>
 
-<style lang="scss" scoped>
 
+h2, h3 {
+background-color: var(--light);
+text-align: center;
+}
+
+
+img {
+width: 20vw;
+height: 25vh;
+}
+
+:root 
+{ 
+  --black: #000000;
+    --light: #b0a592;
+    --dark: #5e3f0b;
+    --white: #ffffff;
+  --primary: var(--light);
+  --secondary:var(--dark);
+}
 </style>

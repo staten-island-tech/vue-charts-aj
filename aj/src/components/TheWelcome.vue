@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="card">
       <h2>{{ poke.incident_type }}</h2>
       <img :src="poke.location" alt=""/>
@@ -15,4 +15,4 @@
   </script>
   <style scoped>
   
-  </style> 
+  </style>  -->

@@ -16,11 +16,10 @@ createApp(App).mount('#app')
 
  
  <template>
-  <div class=" title"> THINGS </div>
+ <h1>Bar Chart</h1>
   <DestCard v-for="poke in pokemon"
-  :key = "poke.name">
+  :key = "poke.location">
   </DestCard>
-  <TheWelcome  :poke = "poke"/>
 </template>
 
 <script setup>
@@ -30,12 +29,13 @@ async function getPokemon () {
   let rest = await fetch ("https://data.cityofnewyork.us/resource/pasr-j7fb.json")
   let data = await rest.json();
   pokemon.value = data;
+  console.log (data)
 }
 onBeforeMounted(() => {
   getPokemon();
 })
 import DestCard from "@/components/DestCard.vue";
-import TheWelcome from "@/components/TheWelcome.vue";
+
 </script>
 
 <style scoped>
