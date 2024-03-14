@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import BarChart from '../views/BarChart.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/bar',
-      name: 'Bar',
-      component: BarChart
+      name: 'bar',
+      component: () => import('../views/BarChart.vue')
     },
     {
       path: '/pie',

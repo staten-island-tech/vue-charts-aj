@@ -1,13 +1,11 @@
 <template>
-  <main>
-    <h1>BAR CHART</h1>
-  </main>
+<HelloWorld v-for="edu in edu" :key="edu.borough" :edu="edu"/>
 
 </template> 
 <script setup>
 
 import { ref, onBeforeMount} from 'vue'
-const edu = ref('')
+const edu = ref("")
 async function getEdu (){
   let rest = await fetch("https://data.cityofnewyork.us/resource/pasr-j7fb.json")
   let data = await rest.json();
