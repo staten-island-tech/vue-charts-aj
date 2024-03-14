@@ -23,7 +23,7 @@ createApp(App).mount('#app')
 </template>
 
 <script setup>
-import {ref, onBeforeMounted} from 'vue'
+import {ref, onBeforeMount} from 'vue'
 const pokemon = ref('')
 async function getPokemon () { 
   let rest = await fetch ("https://data.cityofnewyork.us/resource/pasr-j7fb.json")
@@ -31,7 +31,7 @@ async function getPokemon () {
   pokemon.value = data;
   console.log (data)
 }
-onBeforeMounted(() => {
+onBeforeMount(() => {
   getPokemon();
 })
 import DestCard from "@/components/DestCard.vue";
