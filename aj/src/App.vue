@@ -5,32 +5,22 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <div class="link">
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+
       <nav>
-        <RouterLink to="/pie">Pie chart</RouterLink>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-    <div class="link2">
-      <nav>
-        <RouterLink to="/bar">Bar Chart</RouterLink>
-      </nav>
-      </div>
-    
   </header>
 
   <RouterView />
 </template>
 
 <style scoped>
-header{
-  line-height: 1.5;
-  max-height:100vh;
-}
-.link{
-  background-color: blanchedalmond;
-}
-</style>
-<!-- <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -92,4 +82,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-</style> -->
+</style>
