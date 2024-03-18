@@ -1,18 +1,9 @@
-<!-- <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
- -->
-<template>
   <h1>Bar Chart</h1>
-   <DestCard v-for="poke in pokemon"
+   <HomeBase v-for="poke in pokemon"
    :key = "poke.location">
-   </DestCard>
+</HomeBase>
  </template>
  
  <script setup>
@@ -27,7 +18,7 @@ import TheWelcome from '../components/TheWelcome.vue'
  onBeforeMount(() => {
    getPokemon();
  })
- import DestCard from "@/components/DestCard.vue";
+ import HomeBase from "@/components/HomeBase.vue";
  
  </script>
  

@@ -1,8 +1,7 @@
 
-
 <template>
-  <div class = "all">
- <h2>{{ poke.incident_type }}</h2>
+  <div class = "card">
+ <h2>{{ poke.borough }}</h2>
   </div>
 </template>
 
@@ -31,11 +30,6 @@ background-color: var(--light);
 text-align: center;
 }
 
-
-img {
-width: 20vw;
-height: 25vh;
-}
 
 :root 
 { 
