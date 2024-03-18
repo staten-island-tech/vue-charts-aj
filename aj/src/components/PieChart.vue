@@ -9,7 +9,7 @@
 
 <script setup>
 const props = defineProps({
-  edu: Object
+  edu: Object,
 })
 
 

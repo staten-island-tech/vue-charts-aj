@@ -1,5 +1,5 @@
 <template>
-<HelloWorld v-for="edu in edu" :key="edu.borough" :edu="edu"/>
+<PieChart v-for="edu in edu" :key="edu.borough" :edu="edu"/>
 
 </template> 
 <script setup>
@@ -17,6 +17,6 @@ onBeforeMount(() => {
  getEdu();
 }) 
 
-import HelloWorld from '@/components/HelloWorld.vue';
+import PieChart from '@/components/PieChart.vue';
 </script>
 
