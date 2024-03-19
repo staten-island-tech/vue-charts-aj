@@ -1,15 +1,15 @@
 <template>
-<PieChart v-for="edu in edu" :key="edu.borough" :edu="edu"/>
+<HomePage v-for="edu in edus" :key="edu.borough" :edu="edu"/>
 
 </template> 
 <script setup>
 
 import { ref, onBeforeMount} from 'vue'
-const edu = ref("")
+const edus = ref("")
 async function getEdu (){
   let rest = await fetch("https://data.cityofnewyork.us/resource/pasr-j7fb.json")
   let data = await rest.json();
-  edu.value = data;
+  edus.value = data;
   console.log(data)
 }
 
@@ -17,6 +17,8 @@ onBeforeMount(() => {
  getEdu();
 }) 
 
-import PieChart from '@/components/PieChart.vue';
+import HomePage from '@/components/HomePage.vue';
+
+
 </script>
 
