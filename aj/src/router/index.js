@@ -19,7 +19,7 @@ const router = createRouter({
     {
       path: '/pie',
       name: 'pie',
-      component: () => import('../views/DataVals.vue')
+      component: () => import('../views/ForPie.vue')
     },
   ]
 })
