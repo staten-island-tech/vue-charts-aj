@@ -1,5 +1,5 @@
 <template>
-<HomePage v-for="edu in edus" :key="edu.borough" :edu="edu"/>
+<HomePage v-for="edu in edus" :key="edu" :edu="edu"/>
 
 </template> 
 <script setup>
