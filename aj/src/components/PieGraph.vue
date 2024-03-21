@@ -29,16 +29,6 @@ export default {
   }
 }
 
-/*       chartData: {
-        labels: ['manhattan', 'queens', 'staten island', 'brooklyn', 'bronx'],
-      },
-      ChartOptions: {
-        responsive: true
-      }
-
-    }
-  }
-} */
 
 
 </script>
