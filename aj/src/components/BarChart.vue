@@ -37,33 +37,43 @@ onBeforeMount(() => {
 });
 </script> -->
 <template>
-  <Bar
-    id="my-chart-id"
-    :options="chartOptions"
-    :data="chartData"
-  />
+  <Bar :options="chartOptions" :data="chartData" />
 </template>
 
 <script>
 import { Bar } from 'vue-chartjs'
-
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { ref } from 'vue';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
+const chartData = ref({
+  labels: ['Staten Island', 'Brooklyn'], 
+  
+  datasets: [{
+    label: 'Dataset 1', 
+    backgroundColor: '#3e95cd',
+    data: []
+  }]
+  
+});
+
 export default {
-  name: 'Amount of Incidents Per Borough',
+ 
+  name: 'BarChart',
   components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: [ 'January', 'February', 'March' , 'April', 'May'],
-        datasets: [ {  label: 'Incidents', data: [40, 20, 12,2,1] } ]
-      },
-      chartOptions: {
-        responsive: true
-      }
+  props: {
+    chartData: {
+      type: Object,
+      required: true
+
+     
+    },
+    chartOptions: {
+      type: Object,
+      required: true
     }
   }
+  
 }
 </script>

@@ -20,10 +20,16 @@ const props = defineProps({
   height: 50%;
     width: 25%;
     background-color:#b0a592; ;
-    align-items: center;
     border-radius: 5%;
     box-shadow: 10px 5px 5px rgb(70, 72, 73);
     margin: 15px 1px;
+  padding: 20px;
+  align-items: center;
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 }
 
 
