@@ -1,5 +1,5 @@
  <template>
-  <h1>Pie</h1>
+
   <PieChart v-if="loaded" :chartOptions="chartOptions" :chartData="chartData"/>
 </template>
 
@@ -13,12 +13,12 @@ export default {
     return {
       loaded: false,
       chartData: {
-        labels: ['Utility-other', 'Utility-Water Main', 'Fire 1st Alarm', 'Fire 2nd Alarm', 'Fire 3rd Alarm', 'Fire 4th Alarm', 'Fire 5th Alarm', 'Structural-Sidewalk Collapse'],
+        labels: ['Utility-other', 'Utility-Water Main', 'Utility-Power Outage', 'Utility-Water Service Line', 'Fire 1st Alarm', 'Fire 2nd Alarm', 'Fire 3rd Alarm', 'Fire 4th Alarm', 'Structural-Sidewalk Collapse', 'Fire 5th Alarm', 'Transportation', 'Administration', 'Transportation by car', 'Transportation by train', 'Utility-Gas Low Pressure', 'Utility-Gas High Pressure', 'Utility-Steam Service Line', 'Fire-Explosion', 'Structural-Street Collapse', 'Structural-Partial Collapse', 'Utility-Gas Service Line', 'Structural-Collapse', 'Law Enforcement-Haz Mat', '', '', '', '', '', '', '', ''],
         datasets: [{data: []}]
       },
       chartOptions: {
         responsive: true,
-        backgroundColor: ['#C6E6FB', "#617178", '#000080', '#005A9C', '#545AA7', '#7285A5', '#111E6C', '#46B2B4']
+        backgroundColor: ['#C6E6FB', '#005A9C', '#545AA7', '#7285A5', '#6C85BD', '#A3CEEF', '#004B57','#AED3E3','#BBD2EC','#DFE9F5','#A7AED3', '#838ABD', '#C5D4EB', '#90B1DB']
       },
       retrieveddata:false
     }
@@ -39,14 +39,62 @@ export default {
       this.chartData.datasets[0].data.push(third.length)
       const fourth = data.filter((incident) => incident.incident_type === 'Fire-4th Alarm')
       this.chartData.datasets[0].data.push(fourth.length)
-      const fifth = data.filter((incident) => incident.incident_type === 'Fire-5th Alarm')
-      this.chartData.datasets[0].data.push(fifth.length)
-      const struct = data.filter((incident) => incident.borough === 'Structural-Sidewalk Collapse')
+      const struct = data.filter((incident) => incident.incident_type === 'Structural-Sidewalk Collapse')
       this.chartData.datasets[0].data.push(struct.length)
-/*       const trans = data.filter((incident) => incident.borough === 'Transportation')
+      const fif = data.filter((incident) => incident.incident_type === 'Fire-5th Alarm')
+      this.chartData.datasets[0].data.push(fif.length)
+      const trans = data.filter((incident) => incident.incident_type === 'Transportation')
       this.chartData.datasets[0].data.push(trans.length)
-      const admin = data.filter((incident) => incident.borough === 'Administration')
-      this.chartData.datasets[0].data.push(admin.length)  */
+      const transp = data.filter((incident) => incident.incident_type === 'Transportation-Car')
+      this.chartData.datasets[0].data.push(transp.length)
+      const transpo = data.filter((incident) => incident.incident_type === 'Transportation-Train Subway')
+      this.chartData.datasets[0].data.push(transpo.length)
+      const law = data.filter((incident) => incident.incident_type === 'Law Enforcement-Other')
+      this.chartData.datasets[0].data.push(law.length) 
+      const man = data.filter((incident) => incident.incident_type === 'Utility-Manhole')
+      this.chartData.datasets[0].data.push(man.length) 
+      const six = data.filter((incident) => incident.incident_type === 'Fire-6th Alarm')
+      this.chartData.datasets[0].data.push(six.length) 
+      const coll = data.filter((incident) => incident.incident_type === 'Fire-Collapse')
+      this.chartData.datasets[0].data.push(coll.length) 
+      const haz = data.filter((incident) => incident.incident_type === 'HazMat-High Carbon Monoxide')
+      this.chartData.datasets[0].data.push(haz.length) 
+      const sev = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(sev.length) 
+      const low = data.filter((incident) => incident.incident_type === 'Utility-Gas Low Pressure')
+      this.chartData.datasets[0].data.push(low.length) 
+      const high = data.filter((incident) => incident.incident_type === 'Utility-Gas High Pressure')
+      this.chartData.datasets[0].data.push(high.length) 
+      const steam = data.filter((incident) => incident.incident_type === 'Utility-Steam Service Line')
+      this.chartData.datasets[0].data.push(steam.length) 
+      const explo = data.filter((incident) => incident.incident_type === 'Fire-Explosion')
+      this.chartData.datasets[0].data.push(explo.length) 
+      const street = data.filter((incident) => incident.incident_type === 'Structural-Street Collapse')
+      this.chartData.datasets[0].data.push(street.length) 
+      const partial = data.filter((incident) => incident.incident_type === 'Structural-Partial Collapse')
+      this.chartData.datasets[0].data.push(partial.length) 
+      const structcoll = data.filter((incident) => incident.incident_type === 'Utility-Gas Service Line')
+      this.chartData.datasets[0].data.push(structcoll.length) 
+      const gas = data.filter((incident) => incident.incident_type === 'Structural-Collapse')
+      this.chartData.datasets[0].data.push(gas.length) 
+      const lawhaz = data.filter((incident) => incident.incident_type === 'Law Enforcement-Haz Mat')
+      this.chartData.datasets[0].data.push(lawhaz.length) 
+      const manhole = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(manhole.length) 
+      const sens = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(sens.length) 
+      const drill = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(drill.length) 
+      const elec = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(elec.length) 
+      const construct = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(construct.length) 
+      const viol = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(viol.length) 
+      const demol = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(demol.length) 
+      const ten = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      this.chartData.datasets[0].data.push(ten.length) 
       this.loaded = true
       } catch (e) {
         console.error(e)
