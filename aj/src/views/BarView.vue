@@ -17,7 +17,10 @@ export default {
       loaded: false,
       chartData: {
         labels: ['Brooklyn', 'Queens', 'Staten Island', 'Manhattan', 'Bronx'],
-        datasets: [{ data: [] }]
+        
+        datasets: [{ 
+          label:['Borough'],
+          data: [], }]
       },
       chartOptions: {
         responsive: true,

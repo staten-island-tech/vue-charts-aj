@@ -47,16 +47,7 @@ import { ref } from 'vue';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-const chartData = ref({
-  labels: ['Staten Island', 'Brooklyn'], 
-  
-  datasets: [{
-    label: 'Dataset 1', 
-    backgroundColor: '#3e95cd',
-    data: []
-  }]
-  
-});
+
 
 export default {
  
