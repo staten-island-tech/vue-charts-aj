@@ -1,10 +1,12 @@
 
 <template>
+  <div class = all>
   <div class = "card">
  <h2>{{ poke.borough }}</h2>
  <h2>{{ poke.incident_type }}</h2>
  <h2>{{ poke.location }}</h2>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -24,20 +26,23 @@ const props = defineProps({
     box-shadow: 10px 5px 5px rgb(70, 72, 73);
     margin: 15px 1px;
   padding: 20px;
-  align-items: center;
+}
+
+
+h2{
+background-color: var(--light);
+text-align: center;
+
+}
+
+.all { 
+
   display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    align-content: center;
+    align-content: center; 
 }
-
-
-h2, h3 {
-background-color: var(--light);
-text-align: center;
-}
-
 
 :root 
 { 
