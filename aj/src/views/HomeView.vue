@@ -1,10 +1,12 @@
 
 <template>
   <h1>Home Page</h1>
+  <div class = "flexbox">
    <HomeBase v-for="poke in pokemon"
    :key = "poke.location"
    :poke = "poke">
 </HomeBase>
+</div>
  </template>
  
  <script setup>
@@ -28,5 +30,14 @@
  <style scoped>
 h1 {
   text-align: center;
+}
+
+.flexbox {
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center; 
+  
 }
  </style> 

@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Incidents by Borough</h1>
+    <div class = "baryes">
     <BarChart v-if="loaded" :chartOptions="chartOptions" :chartData="chartData" />
+  </div>
   </div>
 </template>
 
@@ -24,7 +26,7 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        backgroundColor: ['#8BD3E6', '#FF6D6A', '#D291BC', '#FFC4C4', '#957DAD']
+        backgroundColor: ['#b0c4de', '#abcdef', '#6d9bc3', '#0fc0fc', '#120a8f']
       }
     }
   },
@@ -54,3 +56,13 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .baryes {
+    width: 50%;
+    height: 50%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+  }
+</style>

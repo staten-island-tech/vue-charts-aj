@@ -19,9 +19,9 @@ const props = defineProps({
 <style scoped>
 
 .card {
-  height: 50%;
-    width: 25%;
-    background-color:#b0a592; ;
+  height: 65%;
+    width: 70%;
+    background-color:#69a0aa; ;
     border-radius: 5%;
     box-shadow: 10px 5px 5px rgb(70, 72, 73);
     margin: 15px 1px;
