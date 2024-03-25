@@ -1,6 +1,7 @@
  <template>
-
+<div class = "piechart">
   <PieChart v-if="loaded" :chartOptions="chartOptions" :chartData="chartData"/>
+</div>
 </template>
 
 <script>
@@ -13,12 +14,65 @@ export default {
     return {
       loaded: false,
       chartData: {
-        labels: ['Utility-other', 'Utility-Water Main', 'Utility-Power Outage', 'Utility-Water Service Line', 'Fire 1st Alarm', 'Fire 2nd Alarm', 'Fire 3rd Alarm', 'Fire 4th Alarm', 'Structural-Sidewalk Collapse', 'Fire 5th Alarm', 'Transportation', 'Administration', 'Transportation by car', 'Transportation by train', 'Utility-Gas Low Pressure', 'Utility-Gas High Pressure', 'Utility-Steam Service Line', 'Fire-Explosion', 'Structural-Street Collapse', 'Structural-Partial Collapse', 'Utility-Gas Service Line', 'Structural-Collapse', 'Law Enforcement-Haz Mat', '', '', '', '', '', '', '', ''],
+        labels: [
+        'Utility-other',
+         'Utility-Water Main', 
+         'Utility-Power Outage',
+          'Utility-Water Service Line',
+           'Fire 1st Alarm',
+            'Fire 2nd Alarm',
+             'Fire 3rd Alarm',
+              'Fire 4th Alarm',
+               'Structural-Sidewalk Collapse',
+                'Fire 5th Alarm',
+                 'Transportation',
+                  'Administration',
+                   'Transportation by car',
+                    'Transportation by train',
+                     'Utility-Gas Low Pressure',
+                      'Utility-Gas High Pressure',
+                       'Utility-Steam Service Line',
+                        'Fire-Explosion',
+                         'Structural-Street Collapse',
+                          'Structural-Partial Collapse',
+                           'Utility-Gas Service Line',
+                            'Structural-Collapse',
+                             'Law Enforcement-Haz Mat',
+                              'Fire-Manhole',
+                               'Fire-Sensitive Location', 
+                               'Fire-Drill',
+                                'Utility-Electric Feeder Cable',
+                                 'Structural-Construction Accident',
+                                  'Structural-Life Safety Violations',
+                                   'Structural-Demolition',
+                                    'Fire-10-77'],
         datasets: [{data: []}]
       },
       chartOptions: {
         responsive: true,
-        backgroundColor: ['#C6E6FB', '#005A9C', '#545AA7', '#7285A5', '#6C85BD', '#A3CEEF', '#004B57','#AED3E3','#BBD2EC','#DFE9F5','#A7AED3', '#838ABD', '#C5D4EB', '#90B1DB']
+        backgroundColor: [
+        '#C6E6FB',
+         '#005A9C', 
+         '#545AA7',
+          '#7285A5',
+          '#CD5C5C',
+          '#B22222',
+          '#FA8072',
+          '#CA3433',
+           '#6C85BD',
+           '#B80F0A',
+            '#A3CEEF',
+             '#004B57',
+             '#AED3E3',
+             '#BBD2EC',
+             '#DFE9F5',
+             '#A7AED3',
+              '#838ABD',
+               '#C5D4EB',
+                '#90B1DB',
+                '#728C69',
+                '#466D1D','#597D35','#607D3B','#C21807', '#710C04','#990F02', '#98BF64', '#354A21', '#76AD83', '#439946', '#670C07'
+          ]
       },
       retrieveddata:false
     }
@@ -79,21 +133,21 @@ export default {
       this.chartData.datasets[0].data.push(gas.length) 
       const lawhaz = data.filter((incident) => incident.incident_type === 'Law Enforcement-Haz Mat')
       this.chartData.datasets[0].data.push(lawhaz.length) 
-      const manhole = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const manhole = data.filter((incident) => incident.incident_type === 'Fire-Manhole')
       this.chartData.datasets[0].data.push(manhole.length) 
-      const sens = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const sens = data.filter((incident) => incident.incident_type === 'Fire-Sensitive Location')
       this.chartData.datasets[0].data.push(sens.length) 
-      const drill = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const drill = data.filter((incident) => incident.incident_type === 'Fire-Drill')
       this.chartData.datasets[0].data.push(drill.length) 
-      const elec = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const elec = data.filter((incident) => incident.incident_type === 'Utility-Electric Feeder Cable')
       this.chartData.datasets[0].data.push(elec.length) 
-      const construct = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const construct = data.filter((incident) => incident.incident_type === 'Structural-Construction Accident')
       this.chartData.datasets[0].data.push(construct.length) 
-      const viol = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const viol = data.filter((incident) => incident.incident_type === 'Structural-Life Safety Violations')
       this.chartData.datasets[0].data.push(viol.length) 
-      const demol = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const demol = data.filter((incident) => incident.incident_type === 'Structural-Demolition')
       this.chartData.datasets[0].data.push(demol.length) 
-      const ten = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
+      const ten = data.filter((incident) => incident.incident_type === 'Fire-10-77')
       this.chartData.datasets[0].data.push(ten.length) 
       this.loaded = true
       } catch (e) {
@@ -105,7 +159,7 @@ export default {
 
 
 <style scoped>
-.pie {
+.piechart {
   justify-content: center;
   margin: auto;
   height: 1000px;

@@ -1,6 +1,7 @@
 <template>
+  <div class="felx">
 <HomePage v-for="edu in edus" :key="edu" :edu="edu"/>
-
+</div>
 </template> 
 <script setup>
 
@@ -21,4 +22,14 @@ import HomePage from '@/components/HomePage.vue';
 
 
 </script>
+<style scoped>
+.felx {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+</style>
+
 
