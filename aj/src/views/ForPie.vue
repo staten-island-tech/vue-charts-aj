@@ -29,6 +29,8 @@ export default {
                   'Administration',
                    'Transportation by car',
                     'Transportation by train',
+                    'Fire 6th Alarm',
+                    'Fire collapse',
                      'Utility-Gas Low Pressure',
                       'Utility-Gas High Pressure',
                        'Utility-Steam Service Line',
@@ -44,8 +46,8 @@ export default {
                                 'Utility-Electric Feeder Cable',
                                  'Structural-Construction Accident',
                                   'Structural-Life Safety Violations',
-                                   'Structural-Demolition',
-                                    'Fire-10-77'],
+                                   'Structural-Demolition'
+                                    ],
         datasets: [{data: []}]
       },
       chartOptions: {
@@ -71,7 +73,7 @@ export default {
                '#C5D4EB',
                 '#90B1DB',
                 '#728C69',
-                '#466D1D','#597D35','#607D3B','#C21807', '#710C04','#990F02', '#98BF64', '#354A21', '#76AD83', '#439946', '#670C07'
+                '#466D1D','#597D35','#607D3B','#C21807', '#710C04','#990F02', '#98BF64', '#354A21', '#76AD83', '#439946', '#FFE4E1', '#FFB6C1'
           ]
       },
       retrieveddata:false
@@ -85,6 +87,10 @@ export default {
       this.chartData.datasets[0].data.push(util.length)
       const utili= data.filter((incident) => incident.incident_type === 'Utility-Water Main')
       this.chartData.datasets[0].data.push(utili.length)
+      const utilip= data.filter((incident) => incident.incident_type === 'Utility-Power Outage')
+      this.chartData.datasets[0].data.push(utilip.length)
+      const wat= data.filter((incident) => incident.incident_type === 'Utility-Water Service Line')
+      this.chartData.datasets[0].data.push(wat.length)
       const first = data.filter((incident) => incident.incident_type === 'Fire-1st Alarm')
       this.chartData.datasets[0].data.push(first.length)
       const sec = data.filter((incident) => incident.incident_type === 'Fire-2nd Alarm')
@@ -99,22 +105,16 @@ export default {
       this.chartData.datasets[0].data.push(fif.length)
       const trans = data.filter((incident) => incident.incident_type === 'Transportation')
       this.chartData.datasets[0].data.push(trans.length)
+      const admin = data.filter((incident) => incident.incident_type === 'Administration-Other')
+      this.chartData.datasets[0].data.push(admin.length)
       const transp = data.filter((incident) => incident.incident_type === 'Transportation-Car')
       this.chartData.datasets[0].data.push(transp.length)
       const transpo = data.filter((incident) => incident.incident_type === 'Transportation-Train Subway')
       this.chartData.datasets[0].data.push(transpo.length)
-      const law = data.filter((incident) => incident.incident_type === 'Law Enforcement-Other')
-      this.chartData.datasets[0].data.push(law.length) 
-      const man = data.filter((incident) => incident.incident_type === 'Utility-Manhole')
-      this.chartData.datasets[0].data.push(man.length) 
       const six = data.filter((incident) => incident.incident_type === 'Fire-6th Alarm')
       this.chartData.datasets[0].data.push(six.length) 
       const coll = data.filter((incident) => incident.incident_type === 'Fire-Collapse')
       this.chartData.datasets[0].data.push(coll.length) 
-      const haz = data.filter((incident) => incident.incident_type === 'HazMat-High Carbon Monoxide')
-      this.chartData.datasets[0].data.push(haz.length) 
-      const sev = data.filter((incident) => incident.incident_type === 'Fire-7th Alarm')
-      this.chartData.datasets[0].data.push(sev.length) 
       const low = data.filter((incident) => incident.incident_type === 'Utility-Gas Low Pressure')
       this.chartData.datasets[0].data.push(low.length) 
       const high = data.filter((incident) => incident.incident_type === 'Utility-Gas High Pressure')
@@ -147,8 +147,6 @@ export default {
       this.chartData.datasets[0].data.push(viol.length) 
       const demol = data.filter((incident) => incident.incident_type === 'Structural-Demolition')
       this.chartData.datasets[0].data.push(demol.length) 
-      const ten = data.filter((incident) => incident.incident_type === 'Fire-10-77')
-      this.chartData.datasets[0].data.push(ten.length) 
       this.loaded = true
       } catch (e) {
         console.error(e)
